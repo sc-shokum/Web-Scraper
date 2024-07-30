@@ -36,7 +36,7 @@ class EntityDetail(EntityBase):
     state: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 @app.on_event("startup")
 def startup():
@@ -75,7 +75,7 @@ def read_entity(file_number: int, session: Session = Depends(get_session)):
         state=entity.state
     )
 
-if __name__ == "__main__":
+def start_sever():
     import uvicorn
     logging.basicConfig(level=logging.INFO)
     uvicorn.run(app, host="0.0.0.0", port=8000)

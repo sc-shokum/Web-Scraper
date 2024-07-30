@@ -123,9 +123,9 @@ def extract_entity_details(file_number, entity_name):
         print(f"An error occurred while extracting entity details: {e}")
         return {}
 
-def start_scrapping():
+def start_scrapping(name):
     try:
-        entity_name = "Adobe"
+        entity_name = name
         input_entity_name_and_search(entity_name)
         time.sleep(5)
         attempts = 0
@@ -140,3 +140,5 @@ def start_scrapping():
 
     finally:
         driver.quit()
+
+#export DISPLAY=$(grep -oP '(?<=nameserver\s)[\d.]+' /etc/resolv.conf):0
