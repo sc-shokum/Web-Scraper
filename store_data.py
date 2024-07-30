@@ -5,6 +5,10 @@ from dotenv import load_dotenv
 import os
 
 def load_data():
+    """
+    Connects to the postgreSQL server, then takes the data from 
+    csv file and appends it to the table in the database
+    """
     load_dotenv()
 
     db_params = {
